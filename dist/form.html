@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Form</title>
+</head>
+
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+	<div class="header__wrapper">
+		<div class="header__container">
+			<div class="header__body">
+				<a href="" class="header__image">
+					<img src="img/header/logo.svg" alt="">
+				</a>
+				<div class="header__menu menu">
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li>
+								<a href="../index.html" class="menu__link menu__link-black ">ГЛАВНАЯ</a>
+							</li>
+							<li>
+								<a href="../catalog.html" class="menu__link menu__link-black ">КАТАЛОГ ПРОДУКЦИИ</a>
+							</li>
+							<li>
+								<a href="../form.html" class="menu__link menu__link-black _active">ПОДБОР ПРОГРАММЫ</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+				<button type="submit" class="icon-menu">
+					<span></span>
+				</button>
+			</div>
+		</div>
+	</div>
+</header> 
+		<main class="page">
+			<form action="php/mail.php" method="POST"	 id="form" class="form">
+			<section class="page__select select">
+				<div class="select__container _container">
+					<div class="select__body">
+						<div class="select__title">Подбор программы</div>
+						<div class="select__text">ЗАПОЛНИТЕ АНКЕТУ, И МЫ ПОДБЕРЕМ ПРОГРАММУ ПИТАНИЯ ДЛЯ ВАШЕГО КОТА</div>
+						<article class="select__form">
+							<div class="select__form-info">
+								<div class="select__form-block">
+									<label for="select__form_1">ИМЯ:* </label>
+									<div class="details__contain">
+										<input autocomplete="off" required minlength="3" maxlength="15" type="text" name="name" data-error="Ошибка" placeholder="БАРСИК"
+										class="input input__name" id="select__form_1" data-validate-field="name">
+									</div>
+								</div>
+								<div class="select__form-block">
+									<label for="select__form_2">ВЕС (КГ):* </label>
+									<input autocomplete="off" required min="1" max="100" type="number" name="weight" data-error="Ошибка" placeholder="5"
+										class="input input__weight" id="select__form_2" data-validate-field="weight">
+								</div>
+								<div class="select__form-block">
+									<label for="select__form_3">ВОЗРАСТ (ЛЕТ): </label>
+									<input autocomplete="off" required min="1" max="100" type="number" type="text" name="age" data-error="Ошибка" placeholder="7"
+										class="input input__age" id="select__form_3" data-validate-field="age">
+								</div>
+							</div>
+							<div class="select__form-choose">
+								<div class="select__form-radio">
+									<input type="radio" name="weight" id="radio_1" class="radio__input">
+									<label for="radio_1" class="radio__label">ПОХУДЕНИЕ</label>
+								</div>
+								<div class="select__form-radio">
+									<input type="radio" name="weight" id="radio_2" class="radio__input">
+									<label for="radio_2" class="radio__label">НАБОР МАССЫ</label>
+								</div>
+								<div class="select__form-radio">
+									<input type="radio" name="weight" id="radio_3" class="radio__input">
+									<label for="radio_3" class="radio__label">НЕ ЗНАЮ(НУЖЕН ВАШ СОВЕТ)</label>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="page__details details">
+				<div class="details__container _container">
+					<div class="details__title">Контактные данные (владелец кота)</div>
+					<article class="details__form">
+						<div class="form__email">
+							<label for="details__form_1">E-MAIL:*</label>
+							<div class="details__contain">
+								<input autocomplete="email" required rem type="email" name="email" data-error="Ошибка"
+								placeholder="кuklachev@gmail.com" class="input__email input" id="email" data-validate-field="email">
+							<a href="" class="form__link-1 _icon-mail"></a>
+							</div>
+						</div>
+						<div class="form__number">
+							<label for="details__form_2">ТЕЛЕФОН:*</label>
+							<div class="details__contain">
+								<input autocomplete="phone" type="tel" name="phone" required rem data-error="Ошибка"
+								placeholder="+7 (960) 900-60-90" class="input__phone input" id="phone" data-validate-field="tel">
+							<a href="" class="form__link-2 _icon-phone"></a>
+							</div>
+						</div>
+					</article>
+				</div>
+			</section>
+			<section class="page__comment comment">
+				<div class="comment__container _container">
+					<div class="comment__title">Комментарий</div>
+					<article class="comment__form">
+						<textarea name="text" class="comment__area" id="" cols="30" rows="10"
+							placeholder="РАССКАЖИТЕ ОБО ВСЕХ ПОВАДКАХ КОТА"></textarea>
+					</article>
+				</div>
+			</section>
+			<section class="page__extra-food extra-food">
+				<div class="extra-food__container _container">
+					<div class="extra-food__title">Дополнительно</div>
+					<article class="extra-food__form">
+						<div class="extra-food__form-block">
+							<input type="checkbox" name="food" class="checkbox checkbox__sugar" id="checkbox_1">
+							<label class="checkbox__label" for="checkbox_1">САХАРОЗАМЕНИТЕЛЬ</label>
+						</div>
+						<div class="extra-food__form-block">
+							<input type="checkbox" name="food" class="checkbox checkbox__water" id="checkbox_2">
+							<label class="checkbox__label" for="checkbox_2">ПИТЬЕВАЯ ВОДА</label>
+						</div>
+						<div class="extra-food__form-block">
+							<input type="checkbox" name="food" class="checkbox checkbox__milk" id="checkbox_3">
+							<label class="checkbox__label" for="checkbox_3">МОЛОКО</label>
+						</div>
+						<div class="extra-food__form-block">
+							<input type="checkbox" name="food" class="checkbox checkbox__vitamin" id="checkbox_4">
+							<label class="checkbox__label" for="checkbox_4">ВИТАМИНЫ</label>
+						</div>
+					</article>
+					<div class="extra-food__body">
+						<button type="submit" class="extra-food__button">ОТПРАВИТЬ ЗАЯВКУ</button>
+						<p class="extra-food__text">* — Обязательные поля</p>
+					</div>
+				</div>
+			</section>
+			<section class="page__contact contact">
+				<div class="contact__body">
+					<div class="contact__map" id="map"></div>
+					<div class="contact__content">
+						<h2 class="contact__title">ПРИГЛАШАЕМ К СОТРУДНИЧЕСТВУ ДИЛЕРОВ!</h2>
+						<div class="contact__block">
+							<a href="" target="_blank" class="contact__street">ул. Большая Конюшенная, д. 19/8</a>
+							<a href="" class="contact__city">Санкт-Петербург</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</form>
+		</main>
+		<footer class="footer">
+	<div class="footer__container">
+		<div class="footer__body">
+			<a href="" class="footer__link">
+				<img src="img/footer/footer_logo.png" alt="">
+			</a>
+			<div class="footer__socials">
+				<a href="" class="footer__social _icon-vk"></a>
+				<a href="" class="footer__social _icon-facebook"></a>
+				<a href="" class="footer__social _icon-insta"></a>
+			</div>
+			<div class="footer__academy">
+			<a href="" class="footer__academy-item">
+				<div class="footer__text">HTML Academy</div>
+				<div class="footer__hat">
+					<img src="img/footer/academy.svg" alt="">
+				</div>
+			</a>
+		</div>
+		</div>
+	</div>
+</footer>
+	</div>
+	
+	<script src="https://unpkg.com/swiper@8.2.4/swiper-bundle.min.js"></script>
+<!-- <script src="js/vendors.min.js"></script> -->
+<script src="js/app.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdaSV8u0SMJNoBqOPfSTbfjGUSsRH-RGw&callback=initMap" async
+	defer></script>
+</body>
+
+</html>

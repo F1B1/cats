@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "icons";
+  src: url("..fonts/icons.woff") format("woff"), url("..fonts/icons.woff2#icons") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  font-display: block;
+}
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  display: block;
+}
+
+._icon-mail:before {
+  content: "\e905";
+}
+._icon-mail:before._active {
+  color: #68B738;
+}
+
+._icon-phone:before {
+  content: "\e904";
+}
+
+._icon-insta:before {
+  content: "\e902";
+  color: #666;
+}
+
+._icon-vk:before {
+  content: "\e901";
+  color: #666;
+}
+
+._icon-facebook:before {
+  content: "\e903";
+  color: #666;
+}

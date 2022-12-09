@@ -1,0 +1,229 @@
+//====================================================================================================
+.header {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	&._scroll{
+		.header__wrapper{
+			background-color: #69b7388e;
+		}
+		.header__body{
+			min-height: 40px;
+			@media (min-width:$tablet){
+				 min-height: 60px;  
+			}
+		}
+	 }
+	&__wrapper {
+		position: fixed;
+		width: 100%;
+		left: 0;
+		top: 0;
+		z-index: 50;
+		@media (max-width:$mobile){
+			background-color: #fff; 
+		}
+	}
+	&__container {}
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		min-height: 90px;
+		position: relative;
+	}
+	&__image {
+		padding-right: 30px;
+		position: relative;
+		z-index: 5;
+	}
+	&__menu {}
+}
+.menu {
+	&__body {
+		@media (max-width:$mobile){
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			top: 0;
+			left: -100%;
+			background-color: #fcf8f3;
+			transition: left 0.5s ease 0s;
+			padding: 100px 15px 30px 15px;
+			&::before{
+				content:'';
+				position: fixed;
+				width: 100%;
+				height: 90px;
+				top: 0;
+				left: -100%;
+				transition: all 0.5s ease 0s;
+				background-color: #fcf8f3;
+				z-index: 2;
+			}
+			&._active{
+				left: 0;
+				&::before{
+					content:'';
+					left: 0;
+				}
+			}
+		}
+	}
+	&__list {
+		display: flex;
+		justify-content:space-evenly;
+		li{
+			&:not(:last-child) {
+				@media (min-width:$mobile){
+					margin-right: 35px;
+				}
+				@media (max-width:$mobile){
+					 margin-bottom: 15px; 
+				}
+			}
+		}
+		@media (max-width:$mobile){
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+	&__link {
+		@include adaptiveValue("font-size", 20, 18, 1);
+		line-height: math.div(29 , 20) * 100%;
+		position: relative;
+		display: inline-block;
+		color: #fff;
+		@media (max-width:$tablet){
+			color: #000;
+		}
+		@media (min-width:$mobile){
+			&::after{
+				content:'';
+				display: block;
+				position: absolute;
+				width: 0%;
+				height: 2px;
+				left: 0;
+				background-color: #fff;
+				transition: width 0.3s ease 0s;
+				@media (max-width:$tablet){
+					background-color: #68B738;
+				}
+			}
+			&._active{
+				&::after{
+					width: 100%;
+					margin-top: 2px;
+				}
+			}
+		}	
+	}
+	&__link-black{
+		color: #000;
+		&::after{
+			background-color: #68B738;
+		}
+
+	}
+}
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		flex: 0 0 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #000;
+		}
+		&::before {
+			top: 0px;
+		}
+		&::after {
+			bottom: 0px;
+		}
+		span {
+			top: calc(50% - 1px);
+			transform: scale(1);
+		}
+		&._active {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+			}
+		}
+	}
+}
+
+
+
+//====================================================================================================
+//		flex: 0 1 math.div(694, 1190) * 100%;
+
+//Burger
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #000;
+		}
+		&::before {
+			top: 0px;
+		}
+		&::after {
+			bottom: 0px;
+		}
+		span {
+			top: calc(50% - 1px);
+		}
+		.menu-open & {
+			span {
+				transform: scale(0);
+			}
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+			}
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+			}
+		}
+	}
+}
+*/

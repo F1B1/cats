@@ -1,0 +1,307 @@
+.page {
+	&__catalog {
+		padding: 180px 0px 75px 0px;
+	}
+	&__extra {
+		@include adaptiveValue("padding-bottom", 86, 35, 1);
+	}
+}
+.catalog {
+	&__container {
+	}
+	&__body {
+	}
+	&__title {
+		padding: 0px 0px 165px 0px;
+	}
+	&__items {
+		display: grid;
+		gap: 145px 80px;
+		grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+		justify-self: center;
+		@media (max-width: $mobile) {
+			gap: 80px;
+		}
+	}
+	&__footer {
+		padding: 32px 0px 0px 0px;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+	}
+	&__more {
+		border: 1px solid orange;
+		min-width: 245px;
+	}
+	&__item {
+	}
+}
+.item-catalog {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	height: 100%;
+	@media (min-width: $mobileSmall) {
+		padding: 0px 40px 40px 40px;
+	}
+	&:nth-child(n + 4) {
+		display: none;
+	}
+	&._visible {
+		display: flex;
+	}
+	@media (max-width: $mobileSmall) {
+		justify-content: center;
+		grid-template-columns: 150px 130px ;
+		display: grid;
+		grid-template-areas:
+			"image title"
+			"image body"
+			"button button";
+		margin: 0px auto;
+
+	}
+	@media (min-width: $mobileSmall) {
+		background-color: #f2f2f2;
+	}
+	&__image {
+		flex: 1 1 auto;
+		grid-area: image;
+		@include adaptiveValue("height", 208, 130, 1);
+		@media (min-width: $mobileSmall) {
+			position: relative;
+			bottom: 50px;
+		}
+		@media (max-width: $mobileSmall) {
+			img {
+				max-width: 70%;
+			}
+		}
+	}
+	&__title {
+		@include adaptiveValue("font-size", 20, 16, 1);
+		display: flex;
+		flex-direction: column;
+		@include adaptiveValue("width", 150, 80, 1);
+		align-self: center;
+		@include adaptiveValue("padding-bottom", 20, 14, 1);
+		grid-area: title;
+		@media (max-width: $mobileSmall) {
+			text-align: left;
+		}
+	}
+	&__body {
+		grid-area: body;
+		@include adaptiveValue("font-size", 16, 14, 1);
+		color: #444;
+		font-weight: 400;
+		padding: 0px 0px 33px 0px;
+		div {
+			@media (min-width: $mobileSmall) {
+				border-bottom: 1px solid #cdcdcd;
+				margin: 0px 0px 16px 0px;
+			}
+			padding: 0px 0px 6px 0px;
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+	&__weight {
+	}
+	&__taste {
+	}
+	&__price {
+	}
+	&__btn {
+		grid-area: button;
+	}
+}
+.item-catalog-add {
+	border: 2px solid #f2f2f2;
+	&__body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+		padding: 30px;
+		align-items: center;
+		padding-bottom: 40px;
+	}
+	&__cross {
+		@include adaptiveValue("margin-top", 40, 23, 1);
+		@include adaptiveValue("margin-bottom", 43, 23, 1);
+		background: #d3d3d3;
+		height: 60px;
+		width: 2px;
+		position: relative;
+		&::after {
+			content: "";
+			height: 2px;
+			width: 60px;
+			background: #d3d3d3;
+			position: absolute;
+			left: -30px;
+			top: 30px;
+		}
+	}
+	&__title {
+		@include adaptiveValue("font-size", 22, 16, 1);
+		line-height: 110%;
+		text-align: center;
+		color: #111;
+		@include adaptiveValue("padding-bottom", 23, 8, 1);
+	}
+	&__text {
+		color: #444;
+		text-align: center;
+		@include adaptiveValue("font-size", 16, 12, 1);
+		flex: 1 1 auto;
+		@include adaptiveValue("padding-bottom", 87, 21, 1);
+	}
+	&__button {
+		color: #444;
+		background-color: #f2f2f2;
+		min-height: 40px;
+		display: flex;
+		align-self: stretch;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #cacaca;
+				color: rgb(255, 255, 255);
+			}
+		}
+	}
+}
+
+//======================================================================================================
+
+.extra {
+	border-top: 2px solid #68b738;
+	position: relative;
+	&__container {
+	}
+	&__title {
+		@include adaptiveValue("font-size", 36, 24, 1);
+		position: absolute;
+		background-color: #fff;
+		top: -30px;
+		padding: 0 30px;
+		margin: 0 0 0 -30px;
+		line-height: 150%;
+	}
+	&__body {
+		padding-top: 80px;
+		display: flex;
+		@media (max-width:$tablet){
+			flex-wrap: wrap;
+		}
+	}
+	&__table {
+		@include adaptiveValue("flex-basis", 1141 , 900 );
+		@include adaptiveValue("padding-right", 80, 10, 1);
+		@media (max-width:$tablet){
+			&:not(:last-child) {@include adaptiveValue("margin-bottom", 70,40,1 );}
+		}
+	}
+	&__list {
+		border-bottom: 1px solid #cdcdcd;
+		&:nth-of-type(1) {
+			border-top: 1px solid #cdcdcd;
+		}
+		display: grid;
+		align-items: center;
+		grid-template: 71px/2fr 1fr 10% 30%;
+		grid-template-areas: "sub-title weight price btn";
+		@media (max-width: $tablet) {
+			border: 1px solid #cdcdcd;
+			border-top: 0px;
+			@include adaptiveValue("padding",20 , 10,1);
+			grid-template-columns: minmax(150px, 1fr) 20% auto;
+			grid-template-areas: 
+				"sub-title weight price"
+				"btn btn btn"
+			;
+			@include adaptiveValue("grid-template-rows",71 ,40,1 );
+		}
+		@media (max-width:$mobile){
+			grid-template-areas: 
+			"sub-title sub-title"
+			"weight price"
+			"btn btn"
+		;
+		border-right: none;
+		border-left: none;
+		}
+	}
+	&__sub-title {
+		@include adaptiveValue("font-size", 20, 16, 1);
+		text-align: left;
+		grid-area: sub-title;
+	}
+	&__array {
+		@include adaptiveValue("font-size", 16, 14, 1);
+		color: #444;
+		grid-area: weight;
+	}
+	&__price {
+		color: #444;
+		@include adaptiveValue("font-size", 16, 14, 1);
+		grid-area: price;
+	}
+	&__button {
+		@media (max-width:$tablet){
+			@include adaptiveValue("margin-top",21 ,13,1 );
+		}
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		grid-area: btn;
+	}
+	&__item {
+		flex: 0 0 245px;
+		@media (max-width:$tablet){
+			flex: 1 1 100%;
+		}
+	}
+	&__sub-item {
+		padding: 55px 0 42px 0;
+		background-image: url(../img/gift/01.jpg);
+		display: flex;
+		align-items:center;
+		@media (max-width:$tablet){
+			background-image: url(../img/gift/01-long.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			min-height: 200px;
+			justify-content: space-between;
+			@include adaptiveValue("padding-right", 150,0,1 );
+			@include adaptiveValue("padding-left", 90,0,1 );
+		}
+		&:nth-child(1){
+			padding-bottom: 50px;
+		}
+		@media (min-width:$tablet){
+			flex-direction: column;
+		}
+		@media (max-width:$mobileSmall){
+			flex-direction: column;
+			min-height: 280px;
+			background-image: url(../img/gift/01.jpg);
+			background-size: cover;
+			background-position: center;
+		}
+	}
+	&__image {}
+	&__icon {}
+	&__text {
+		padding-top: 60px;
+		width: 161px;
+		color: #fff;
+		@media (max-width:$tablet){
+			padding-top: 0;
+		}
+	}
+}
+

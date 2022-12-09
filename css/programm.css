@@ -1,0 +1,17 @@
+.select__form-radio {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.radio__input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: absolute;
+}
+.radio__label {
+  padding-left: 25px;
+  font-size: 1rem;
+  color: #222;
+  cursor: pointer;
+}
